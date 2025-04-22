@@ -1,6 +1,5 @@
-# backend/wsgi.py
-
-from backend import app  # Assuming you have a Flask app in backend/__init__.py
+from backend.main import app  # 👈 now correctly imports your FastAPI app
 
 if __name__ == "__main__":
-    app.run()
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=10000)
